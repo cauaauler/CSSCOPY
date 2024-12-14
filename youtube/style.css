@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* header */
+.container-header {
+	display: flex;
+	justify-content: center;
+	height: 10vh;
+}
+.container-search-bar {
+	display: flex;
+	width: 50%;
+}
+.container-search-bar input{
+	width: 100%;
+}
+
+header {
+	display: flex;
+	background-color: red;
+	position: fixed;
+	width: 100%;
+	justify-content: space-between;
+}
