@@ -32,17 +32,19 @@ header {
 }
 
 /* Buttons header */
-header button, header input, header h1 {
+header button,
+header input,
+header h1 {
 	margin-top: 10px;
 	padding: 5px;
 }
 #menu-button {
 	margin-left: 2vw;
 }
-#profile-button{
+#profile-button {
 	margin-right: 2vw;
 }
-.header-icon{
+.header-icon {
 	width: 30px;
 }
 
@@ -64,21 +66,21 @@ header button, header input, header h1 {
 	background-color: blue;
 	position: fixed;
 }
-#categories{
+#categories {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
 	width: 7vw;
 }
-.category{
+.category {
 	text-align: center;
 	margin-top: 10px;
 }
-.category button{
+.category button {
 	width: 100%;
 }
-.side-icon{
+.side-icon {
 	width: 20px;
 	margin-top: 20px;
 }
@@ -95,79 +97,80 @@ main {
 	margin-left: 7vw;
 	margin-top: 8vh;
 	padding: 10vh;
-
-	
 }
 @media screen and (max-width: 600px) {
-	main{
+	main {
 		grid-template-columns: 1fr;
 		margin-left: 0px;
 	}
-	#side-bar{
+	#side-bar {
 		width: 0px;
 	}
-	#categories img{
+	#categories img {
 		display: none;
 	}
-	#bottom-header{
+	#bottom-header {
 		margin-left: 0px;
 	}
-	.icon-disable{
+	.icon-disable {
 		display: none;
 	}
-	
-
+	#carousel-header button {
+		width: calc(100% / 5);
+	}
 }
 /* Videos */
-.info-video{
+.info-video {
 	display: flex;
 	width: 100%;
 	gap: 10px;
 	margin: 10px;
 }
-.img-channel{
+.img-channel {
 	width: 50px;
 }
 
 /* Carousel */
 #carousel-header {
-    display: flex;
-    /* overflow: hidden; */
-    width: 93vw; /* Garante que o carousel ocupe toda a largura disponível */
+	display: flex;
+	/* overflow: hidden; */
+	width: 93vw; /* Garante que o carousel ocupe toda a largura disponível */
 }
 
 #carousel-header button {
-    flex: 0 0 auto; /* Impede que os botões se redimensionem automaticamente */
-    width: calc(100% / 5); /* Ajusta dinamicamente com base no número de botões visíveis */
-    padding: 10px;
-    text-align: center;
+	flex: 0 0 auto; /* Impede que os botões se redimensionem automaticamente */
+	width: calc(100% / 8);
+	padding: 10px;
+	text-align: center;
 }
-
 
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
-#prev, #next {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
+#prev,
+#next {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	color: white;
+	font-size: 24px;
+	cursor: pointer;
+	border-radius: 50%;
 }
-#prev:hover, #next:hover {
+#prev:hover,
+#next:hover {
 	background-color: rgba(175, 175, 175, 0.2);
-	border-radius: 100%;
 }
 
 #prev {
-    left: 7vw;
+	left: 7vw;
 }
 
 #next {
-    right: 10px;
+	right: 10px;
+
+	box-shadow: 0px 0px 10px 15px rgba(1, 1, 1, 1);
 }

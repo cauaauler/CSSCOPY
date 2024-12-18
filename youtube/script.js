@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('carousel-header').appendChild(novoElemento);
     });
 
-    // Lógica do Carousel
+    // CAROUSEL
     const carouselImages = document.getElementById('carousel-header');
     const images = document.querySelectorAll('#carousel-header button');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
 
     let index = 0;
-    let visibleImages = 5; // Número inicial de imagens visíveis
+    let visibleImages = 8; // Número inicial de imagens visíveis
     prevButton.style.display = "none";
 
     // Atualiza o número de imagens visíveis dinamicamente
