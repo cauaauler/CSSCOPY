@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube</title>
     <link rel="stylesheet" href="style.css">
+
     <script src="script.js"></script>
 </head>
 
@@ -15,7 +16,7 @@
             <div class="category">
                 <button>
                     <img src="icons/home.png" alt="" class="side-icon">
-                    <p>Home</p>
+                    <p>Início</p>
                 </button>
             </div>
             <div class="category">
@@ -27,13 +28,13 @@
             <div class="category">
                 <button>
                     <img src="icons/subscribe.png" alt="" class="side-icon">
-                    <p>Subscribe</p>
+                    <p>Inscrições</p>
                 </button>
             </div>
             <div class="category">
                 <button>
                     <img src="icons/user (1).png" alt="" class="side-icon">
-                    <p>You</p>
+                    <p>Você</p>
                 </button>
 
             </div>
@@ -52,14 +53,22 @@
             </div>
             <button id="mic-button" class="icon-disable"><img src="icons/microphone.png" alt=""
                     class="header-icon"></button>
-            <button id="create-button">+ Create</button>
+            <button id="create-button">+ Criar</button>
             <button id="notification-button " class="icon-disable"><img src="icons/notification.png" alt=""
                     class="header-icon"></button>
             <button id="profile-button"><img src="icons/profile.png" alt="" class="header-icon"></button>
         </div>
-        <div id="bottom-header">
-            <button id="logout-button">Logout</button>
+        <!-- Adicionado Dinamicamente -->
+        <div class="bottom-header" id="bottom-header">
+            <div>
+
+                <button id="prev">&lt;</button>
+            </div>
+            <div id="carousel-header">
+            </div>
+            <button id="next">&gt;</button>
         </div>
+
 
     </header>
     <div id="container-header">

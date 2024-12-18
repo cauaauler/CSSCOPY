@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel with 5 Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: calc(100% / 5);
+            pointer-events: none;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="https://via.placeholder.com/200x200/FF5733/FFFFFF?text=1" alt="Slide 1">
+            <img src="https://via.placeholder.com/200x200/33FF57/FFFFFF?text=2" alt="Slide 2">
+            <img src="https://via.placeholder.com/200x200/3357FF/FFFFFF?text=3" alt="Slide 3">
+            <img src="https://via.placeholder.com/200x200/FF33FF/FFFFFF?text=4" alt="Slide 4">
+            <img src="https://via.placeholder.com/200x200/57FFFF/FFFFFF?text=5" alt="Slide 5">
+            <img src="https://via.placeholder.com/200x200/FFFF57/FFFFFF?text=6" alt="Slide 6">
+            <img src="https://via.placeholder.com/200x200/57FF33/FFFFFF?text=7" alt="Slide 7">
+            <img src="https://via.placeholder.com/200x200/5733FF/FFFFFF?text=8" alt="Slide 8">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let index = 0;
+        const visibleImages = 5;
+
+        function updateCarousel() {
+            const width = images[0].clientWidth;
+            carouselImages.style.transform = `translateX(${-index * width}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (index < images.length - visibleImages) {
+                index++;
+            } else {
+                index = 0; // Reset to the beginning
+            }
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+            } else {
+                index = images.length - visibleImages; // Go to the end
+            }
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+
+</body>
+
+</html>
