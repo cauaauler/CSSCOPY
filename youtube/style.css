@@ -132,16 +132,17 @@ main {
 /* Carousel */
 #carousel-header {
     display: flex;
-    /* overflow: hidden; Esconde os itens fora da área visível */
+    /* overflow: hidden; */
     width: 93vw; /* Garante que o carousel ocupe toda a largura disponível */
 }
 
 #carousel-header button {
-    flex: 0 0 auto; /* Faz com que os botões fiquem lado a lado */
-    width: 20%; /* Cada botão ocupa 20% da largura do carousel */
+    flex: 0 0 auto; /* Impede que os botões se redimensionem automaticamente */
+    width: calc(100% / 5); /* Ajusta dinamicamente com base no número de botões visíveis */
     padding: 10px;
     text-align: center;
 }
+
 
 button {
     background-color: transparent;

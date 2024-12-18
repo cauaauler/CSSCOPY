@@ -12,40 +12,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Lógica do Carousel
-    const carouselImages = document.getElementById('carousel-header'); // Correção aqui para usar getElementById
-    const images = document.querySelectorAll('#carousel-header button'); // Correção aqui para pegar os botões
+    const carouselImages = document.getElementById('carousel-header');
+    const images = document.querySelectorAll('#carousel-header button');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
 
     let index = 0;
-    const visibleImages = 5; // Número de imagens visíveis de uma vez
+    let visibleImages = 5; // Número inicial de imagens visíveis
+    prevButton.style.display = "none";
 
-    // Função para atualizar o carousel
-    function updateCarousel() {
-        const width = images[0].offsetWidth; // Usa offsetWidth para garantir a largura do botão
-        carouselImages.style.transform = `translateX(${-index * width}px)`; // Desloca o carousel
+    // Atualiza o número de imagens visíveis dinamicamente
+    function updateVisibleImages() {
+        const containerWidth = carouselImages.offsetWidth;
+        const buttonWidth = images[0].offsetWidth;
+        visibleImages = Math.floor(containerWidth / buttonWidth);
+    }
+
+    // Atualiza a visibilidade dos botões de navegação
+    function updateButtonVisibility() {
+        prevButton.style.display = index === 0 ? "none" : "block";
+        nextButton.style.display = index >= images.length - visibleImages ? "none" : "block";
     }
 
     // Evento para mover para a próxima imagem
     nextButton.addEventListener('click', () => {
         if (index < images.length - visibleImages) {
+            //Isso aqui atualiza o carousel
+            images[index].style.display = "none";
             index++;
-        } else {
-            // index = 0; // Resetar para o início
         }
-        updateCarousel();
+        updateButtonVisibility();
     });
-
+    
     // Evento para mover para a imagem anterior
     prevButton.addEventListener('click', () => {
         if (index > 0) {
             index--;
-        } else {
-            // index = images.length - visibleImages; // Vai para o final
+            //Isso aqui atualiza o carousel
+            images[index].style.display = "block";
         }
-        updateCarousel();
+        updateButtonVisibility();
     });
 
     // Atualiza o carousel ao redimensionar a janela
-    window.addEventListener('resize', updateCarousel);
+    window.addEventListener('resize', () => {
+        updateVisibleImages();
+        updateCarousel();
+    });
+
+    // Inicializa o comportamento responsivo
+    updateVisibleImages();
+    updateCarousel();
+
 });
