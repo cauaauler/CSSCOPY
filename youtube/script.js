@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     botoes.forEach(element => {
         const novoElemento = document.createElement('button');
         novoElemento.textContent = element;
+        novoElemento.setAttribute('title', element);
         document.getElementById('carousel-header').appendChild(novoElemento);
     });
 
