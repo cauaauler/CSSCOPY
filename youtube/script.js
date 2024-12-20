@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         novoElemento.textContent = element;
         novoElemento.setAttribute('title', element);
         novoElemento.addEventListener('click', () => {
+            //preciso arrumar isso aqui 
             // window.location.href = "";
             updateButtonColor(novoElemento);
         })
