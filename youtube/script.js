@@ -9,11 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const novoElemento = document.createElement('button');
         novoElemento.textContent = element;
         novoElemento.setAttribute('title', element);
+        novoElemento.addEventListener('click', () => {
+            // window.location.href = "";
+            updateButtonColor(novoElemento);
+        })
         document.getElementById('carousel-header').appendChild(novoElemento);
     });
 
     // CAROUSEL
-    const carouselImages = document.getElementById('carousel-header');
+    // const carouselImages = document.getElementById('carousel-header');
     const images = document.querySelectorAll('#carousel-header button');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -22,17 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let visibleImages = 8; // Número inicial de imagens visíveis
     prevButton.style.display = "none";
 
-    // Atualiza o número de imagens visíveis dinamicamente
-    function updateVisibleImages() {
-        const containerWidth = carouselImages.offsetWidth;
-        const buttonWidth = images[0].offsetWidth;
-        visibleImages = Math.floor(containerWidth / buttonWidth);
-    }
-
     // Atualiza a visibilidade dos botões de navegação
     function updateButtonVisibility() {
         prevButton.style.display = index === 0 ? "none" : "block";
         nextButton.style.display = index >= images.length - visibleImages ? "none" : "block";
+    }
+    // Muda a cor do botão selecionado
+    function updateButtonColor(thisButton) {
+        images.forEach((button) => {
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        });
+        thisButton.style.backgroundColor = 'white';
+        thisButton.style.color = 'black';
     }
 
     // Evento para mover para a próxima imagem
@@ -57,12 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Atualiza o carousel ao redimensionar a janela
     window.addEventListener('resize', () => {
-        updateVisibleImages();
+        // updateVisibleImages();
         updateCarousel();
     });
 
     // Inicializa o comportamento responsivo
-    updateVisibleImages();
+    images[0].style.backgroundColor = 'white';
+    images[0].style.color = 'black';
+    // updateVisibleImages();
     updateCarousel();
 
 });

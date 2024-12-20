@@ -35,8 +35,12 @@ header {
 header button,
 header input,
 header h1 {
+	color: white;
 	margin-top: 10px;
 	padding: 5px;
+}
+header img{
+	filter: invert(1);
 }
 #menu-button {
 	margin-left: 2vw;
@@ -72,6 +76,7 @@ header h1 {
 	justify-content: space-between;
 	height: 100%;
 	width: 7vw;
+	filter: invert(1);
 }
 .category {
 	text-align: center;
@@ -119,8 +124,19 @@ main {
 #carousel-header button {
 	flex: 0 0 auto; /* Impede que os botões se redimensionem automaticamente */
 	width: calc(100% / 8);
-	padding: 10px;
+	/* padding: px; */
 	text-align: center;
+	background-color: rgb(92, 92, 92);
+	color: white;
+	margin: 10px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-radius: 10px;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
+}
+
+#carousel-header button:hover {
+	background-color: rgb(124, 124, 124);
 }
 
 button {
@@ -134,14 +150,17 @@ button {
 	position: absolute;
 	top: 50%;
 	z-index: 1;
+	background-color: black;
 	color: white;
 	font-size: 24px;
 	cursor: pointer;
+	padding: 0px 10px;
 	border-radius: 50%;
+	box-shadow: 0px 0px 10px 15px rgba(1, 1, 1, 1);
 }
 #prev:hover,
 #next:hover {
-	background-color: rgba(175, 175, 175, 0.2);
+	background-color: rgb(175, 175, 175);
 }
 
 #prev {
@@ -150,8 +169,6 @@ button {
 
 #next {
 	right: 10px;
-
-	box-shadow: 0px 0px 10px 15px rgba(1, 1, 1, 1);
 }
 @media screen and (max-width: 600px) {
 	main {
