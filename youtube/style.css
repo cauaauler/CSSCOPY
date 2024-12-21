@@ -3,13 +3,16 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+body {
+	background-color: #0f0f0f;
+}
 main {
 	/* POR CONTA DO 8 VH DO HEADER */
-	height: 92vh;
+	height: 100vh;
 }
 #container-header {
 	min-height: 20vh;
-	background-color: red;
+	/* background-color: red; */
 }
 /* Header */
 header {
@@ -22,12 +25,12 @@ header {
 #top-header {
 	display: flex;
 	justify-content: space-between;
-	background-color: red;
+	/* background-color: red; */
 }
 #bottom-header {
 	display: flex;
 	justify-content: space-around;
-	background-color: red;
+	background-color: #0f0f0f;
 	margin-left: 7vw;
 }
 
@@ -39,7 +42,19 @@ header h1 {
 	margin-top: 10px;
 	padding: 5px;
 }
-header img{
+#create-button,
+#search-button,
+#mic-button {
+	background-color: rgb(39, 39, 39, 39);
+	border-radius: 50px;
+}
+#mic-button {
+	padding: 0px 10px;
+}
+#create-button{
+	padding: 0px 10px;
+}
+header img {
 	filter: invert(1);
 }
 #menu-button {
@@ -49,7 +64,7 @@ header img{
 	margin-right: 2vw;
 }
 .header-icon {
-	width: 30px;
+	width: 25px;
 }
 
 /* Search Bar */
@@ -59,6 +74,18 @@ header img{
 }
 #container-search-bar input {
 	width: 100%;
+	border: 1px solid gray;
+	border-radius: 50px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#search-button {
+	padding: 0px 15px;
+	border: 1px solid gray;
+	border-left: none;
+	border-radius: 50px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 /* Side-Bar */
 #side-bar {
@@ -67,7 +94,7 @@ header img{
 	margin-top: 15vh;
 	min-height: 92vh;
 	width: 7vw;
-	background-color: blue;
+	/* background-color: blue; */
 	position: fixed;
 }
 #categories {
@@ -98,7 +125,7 @@ main {
 	grid-template-columns: 1fr 1fr 1fr;
 	/* justify-content: space-between; */
 	width: 100%;
-	background-color: green;
+	/* background-color: green; */
 	margin-left: 7vw;
 	margin-top: 8vh;
 	padding: 10vh;
@@ -109,9 +136,20 @@ main {
 	width: 100%;
 	gap: 10px;
 	margin: 10px;
+	color: white;
 }
 .img-channel {
 	width: 50px;
+	border-radius: 50%;
+}
+.img-video {
+	width: 100%;
+	max-height: 200px;
+	padding: 10px;
+	border-radius: 20px;
+}
+.video-channel-name {
+	color: rgb(160, 160, 160);
 }
 
 /* Carousel */
@@ -126,7 +164,7 @@ main {
 	width: calc(100% / 8);
 	/* padding: px; */
 	text-align: center;
-	background-color: rgb(92, 92, 92);
+	background-color: #282828;
 	color: white;
 	margin: 10px;
 	margin-top: 1em;
@@ -136,7 +174,7 @@ main {
 }
 
 #carousel-header button:hover {
-	background-color: rgb(124, 124, 124);
+	background-color: rgb(68, 68, 68);
 }
 
 button {

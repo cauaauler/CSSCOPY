@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Tudo", "Música", "Jogos", "Mixes", "Hip Hop Brasileiro", "Freestyle Rap", "Restaurantes",
         "Basquete", "Futebol", "Turma do Didi", "Pica-Pau", "Carlitos Tevez", "Moda", "Estilo", "Tênis", "Ao Vivo", "Novidades"
     ];
+    let selectedButton = null;
 
     // Adiciona os botões dinamicamente no carousel
     botoes.forEach(element => {
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         novoElemento.addEventListener('click', () => {
             //preciso arrumar isso aqui 
             // window.location.href = "";
+            selectedButton = novoElemento;
             updateButtonColor(novoElemento);
         })
         document.getElementById('carousel-header').appendChild(novoElemento);
@@ -69,8 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Inicializa o comportamento responsivo
-    images[0].style.backgroundColor = 'white';
-    images[0].style.color = 'black';
+    if(selectedButton){
+        selectedButton.style.backgroundColor = 'white';
+        selectedButton.style.color = 'black';
+    }else{
+        images[0].style.backgroundColor = 'white';
+        images[0].style.color = 'black';
+    }
     // updateVisibleImages();
     updateCarousel();
 
