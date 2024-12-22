@@ -7,7 +7,6 @@ body {
 	background-color: #0f0f0f;
 }
 main {
-	/* POR CONTA DO 8 VH DO HEADER */
 	height: 100vh;
 }
 #container-header {
@@ -25,7 +24,7 @@ header {
 #top-header {
 	display: flex;
 	justify-content: space-between;
-	/* background-color: red; */
+	background-color: #0f0f0f;
 }
 #bottom-header {
 	display: flex;
@@ -74,14 +73,14 @@ header img {
 }
 #container-search-bar input {
 	width: 100%;
-	border: 1px solid gray;
+	border: 1px solid rgb(71, 71, 71);
 	border-radius: 50px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
 }
 #search-button {
 	padding: 0px 15px;
-	border: 1px solid gray;
+	border: 1px solid rgb(71, 71, 71);
 	border-left: none;
 	border-radius: 50px;
 	border-top-left-radius: 0px;
@@ -94,7 +93,7 @@ header img {
 	margin-top: 15vh;
 	min-height: 92vh;
 	width: 7vw;
-	/* background-color: blue; */
+	background-color: #0f0f0f;
 	position: fixed;
 }
 #categories {
@@ -127,8 +126,8 @@ main {
 	width: 100%;
 	/* background-color: green; */
 	margin-left: 7vw;
-	margin-top: 8vh;
-	padding: 10vh;
+	/* margin-top: 8vh; */
+	padding: 2vh;
 }
 /* Videos */
 .info-video {
@@ -141,6 +140,7 @@ main {
 .img-channel {
 	width: 50px;
 	border-radius: 50%;
+	max-height: 50px;
 }
 .img-video {
 	width: 100%;
@@ -208,13 +208,13 @@ button {
 #next {
 	right: 10px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 	main {
 		grid-template-columns: 1fr;
 		margin-left: 0px;
 	}
 	#side-bar {
-		width: 0px;
+		display: none;
 	}
 	#categories img {
 		display: none;
